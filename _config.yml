@@ -1,6 +1,6 @@
 title: 风清扬的博客
 description: 一个技术宅的老掉牙博客
-baseurl: "" # 不要加斜杠
+baseurl: "aiwv.github.io" # 不要加斜杠
 url: "https://52db.github.io/aiwv.github.io/"
 theme: minima
 plugins:
