@@ -1,7 +1,14 @@
 ---
 layout: default
-title: 我的博客
+title: 风清扬的博客
 ---
 
 <h1>{{ 风清扬的博客 }}</h1>
-<p>欢迎来到我的博客！</p>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+    </li>
+  {% endfor %}
+</ul>
