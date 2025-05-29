@@ -1,7 +1,7 @@
 title: 风清扬的博客
 description: 一个技术宅的老掉牙博客
 baseurl: "" # 不要加斜杠
-url: "https://yourname.github.io"
+url: "https://52db.github.io/aiwv.github.io/"
 theme: minima
 plugins:
   - jekyll-feed
