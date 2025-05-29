@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 风清扬的博客
+title: 我的博客
 ---
 
 <h1>{{ site.title }}</h1>
