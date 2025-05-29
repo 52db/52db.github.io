@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 博客目录
-permalink: /_posts/
+permalink: /blog/
 ---
 
 <h1>博客目录</h1>
