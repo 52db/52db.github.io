@@ -1,35 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ 风清扬的博客 }} | {{ site.title }}</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 720px;
-      margin: auto;
-      padding: 2em;
-    }
-    nav {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 1em;
-      margin-bottom: 2em;
-    }
-    nav a {
-      margin-right: 1.5em;
-      text-decoration: none;
-      color: #0366d6;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="{{ "/" | relative_url }}">主页</a>
-    <a href="{{ "/blog/" | relative_url }}">博客</a>
-    <a href="{{ "/about/" | relative_url }}">关于我</a>
-  </nav>
-
-  {{ content }}
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ 风清扬的博客 }}</title>
+    <style>
+      body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 2em; }
+      a { text-decoration: none; color: #0366d6; }
+    </style>
+  </head>
+  <body>
+    {{ content }}
+  </body>
 </html>
