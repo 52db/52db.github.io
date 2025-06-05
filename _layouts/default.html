@@ -12,7 +12,7 @@
       html, body {
         margin: 0;
         padding: 0;
-        overflow-x: hidden; /* 隐藏水平滚动条 */
+        overflow-x: hidden;
         width: 100%;
       }
       
@@ -35,6 +35,29 @@
         max-width: 100%;
       }
       
+      /* 图片特殊处理 */
+      img {
+        max-width: calc(100% - 2em); /* 减去容器的左右padding */
+        height: auto;
+        display: block;
+        margin: 1em auto; /* 上下边距，左右自动居中 */
+      }
+      
+      /* 或者使用这种方式 - 图片容器不受padding影响 */
+      .image-container {
+        width: 100vw;
+        max-width: 800px;
+        margin-left: calc(-1em);
+        margin-right: calc(-1em);
+      }
+      
+      .image-container img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+      
       /* 代码块处理 */
       pre, code {
         overflow-x: auto;
@@ -43,13 +66,6 @@
         background-color: #f6f8fa;
         padding: 0.5em;
         border-radius: 3px;
-      }
-      
-      /* 确保图片响应式 */
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
       }
       
       /* 表格响应式 */
