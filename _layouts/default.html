@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ 风清扬的博客 }}</title>
+    <title>{{ page.title }} - 风清扬的博客</title>
     <style>
       * {
         box-sizing: border-box;
@@ -20,42 +20,102 @@
         font-family: sans-serif; 
         max-width: 800px;
         margin: 0 auto;
-        padding: 1em;
+        padding: 0;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        background-color: #f8f9fa;
+      }
+      
+      /* 导航栏样式 */
+      .navbar {
+        background-color: #2c3e50;
+        padding: 1em;
+        margin-bottom: 2em;
+      }
+      
+      .navbar h1 {
+        color: white;
+        margin: 0 0 0.5em 0;
+        font-size: 1.8em;
+      }
+      
+      .nav-links {
+        display: flex;
+        gap: 1.5em;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      .nav-links a {
+        color: #ecf0f1;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+      
+      .nav-links a:hover {
+        background-color: #34495e;
+      }
+      
+      .nav-links a.active {
+        background-color: #3498db;
+      }
+      
+      /* 主内容区域 */
+      .content {
+        padding: 0 1em 2em 1em;
+        background-color: white;
+        min-height: 70vh;
+      }
+      
+      /* 主题选择器 */
+      .theme-selector {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+      }
+      
+      .theme-btn {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 0.5em;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      /* 深色主题 */
+      body.dark-theme {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+      }
+      
+      body.dark-theme .content {
+        background-color: #34495e;
+      }
+      
+      body.dark-theme .navbar {
+        background-color: #1a252f;
       }
       
       a { 
         text-decoration: none; 
-        color: #0366d6; 
+        color: #3498db; 
       }
       
-      /* 防止所有元素超出容器 */
-      * {
-        max-width: 100%;
+      body.dark-theme a {
+        color: #5dade2;
       }
       
-      /* 图片特殊处理 */
+      /* 图片处理 */
       img {
-        max-width: calc(100% - 2em); /* 减去容器的左右padding */
+        max-width: calc(100% - 2em);
         height: auto;
         display: block;
-        margin: 1em auto; /* 上下边距，左右自动居中 */
-      }
-      
-      /* 或者使用这种方式 - 图片容器不受padding影响 */
-      .image-container {
-        width: 100vw;
-        max-width: 800px;
-        margin-left: calc(-1em);
-        margin-right: calc(-1em);
-      }
-      
-      .image-container img {
-        width: 100%;
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
+        margin: 1em auto;
       }
       
       /* 代码块处理 */
@@ -68,21 +128,58 @@
         border-radius: 3px;
       }
       
-      /* 表格响应式 */
-      table {
-        width: 100%;
-        table-layout: fixed;
-        word-wrap: break-word;
-      }
-      
-      /* 长文本强制换行 */
-      p, div, span {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+      body.dark-theme pre,
+      body.dark-theme code {
+        background-color: #2c3e50;
       }
     </style>
   </head>
   <body>
-    {{ content }}
+    <!-- 主题切换按钮 -->
+    <div class="theme-selector">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+    </div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <h1>风清扬的博客</h1>
+      <ul class="nav-links">
+        <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">主页</a></li>
+        <li><a href="/about.html" class="{% if page.url == '/about.html' %}active{% endif %}">关于</a></li>
+        <li><a href="/categories.html" class="{% if page.url == '/categories.html' %}active{% endif %}">分类</a></li>
+        <li><a href="/archive.html" class="{% if page.url == '/archive.html' %}active{% endif %}">归档</a></li>
+      </ul>
+    </nav>
+    
+    <!-- 主内容 -->
+    <div class="content">
+      {{ content }}
+    </div>
+    
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const btn = document.querySelector('.theme-btn');
+        
+        if (body.classList.contains('dark-theme')) {
+          body.classList.remove('dark-theme');
+          btn.textContent = '🌙';
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.classList.add('dark-theme');
+          btn.textContent = '☀️';
+          localStorage.setItem('theme', 'dark');
+        }
+      }
+      
+      // 加载保存的主题
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+          document.querySelector('.theme-btn').textContent = '☀️';
+        }
+      });
+    </script>
   </body>
 </html>
