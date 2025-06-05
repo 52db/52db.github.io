@@ -2,14 +2,32 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
+    <title>{{ 风清扬的博客 }}</title>
     <style>
-      body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2em; }
+      body { 
+        font-family: sans-serif; 
+        max-width: 800px;  /* 增加宽度 */
+        margin: 0 auto;    /* 确保居中 */
+        padding: 1em 2em;  /* 调整内边距 */
+        box-sizing: border-box; /* 包含padding在宽度计算内 */
+      }
       a { text-decoration: none; color: #0366d6; }
+      
+      /* 防止代码块溢出 */
+      pre, code {
+        overflow-x: auto;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      
+      /* 确保图片不超出容器 */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     </style>
   </head>
   <body>
     {{ content }}
   </body>
 </html>
-
