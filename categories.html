@@ -1,0 +1,20 @@
+---
+layout: default
+title: 分类
+---
+
+<h2>文章分类</h2>
+
+{% assign categories = site.categories | sort %}
+
+{% for category in categories %}
+  <h3>{{ category[0] }}</h3>
+  <ul style="list-style: none; padding: 0;">
+    {% for post in category[1] %}
+      <li style="margin-bottom: 0.5em;">
+        <span style="color: #666; font-size: 0.9em;">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url }}" style="margin-left: 1em;">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
