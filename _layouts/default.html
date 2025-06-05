@@ -2,28 +2,67 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ 风清扬的博客 }}</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 隐藏水平滚动条 */
+        width: 100%;
+      }
+      
       body { 
         font-family: sans-serif; 
-        max-width: 800px;  /* 增加宽度 */
-        margin: 0 auto;    /* 确保居中 */
-        padding: 1em 2em;  /* 调整内边距 */
-        box-sizing: border-box; /* 包含padding在宽度计算内 */
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1em;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
-      a { text-decoration: none; color: #0366d6; }
       
-      /* 防止代码块溢出 */
+      a { 
+        text-decoration: none; 
+        color: #0366d6; 
+      }
+      
+      /* 防止所有元素超出容器 */
+      * {
+        max-width: 100%;
+      }
+      
+      /* 代码块处理 */
       pre, code {
         overflow-x: auto;
-        word-wrap: break-word;
         white-space: pre-wrap;
+        word-break: break-all;
+        background-color: #f6f8fa;
+        padding: 0.5em;
+        border-radius: 3px;
       }
       
-      /* 确保图片不超出容器 */
+      /* 确保图片响应式 */
       img {
         max-width: 100%;
         height: auto;
+        display: block;
+      }
+      
+      /* 表格响应式 */
+      table {
+        width: 100%;
+        table-layout: fixed;
+        word-wrap: break-word;
+      }
+      
+      /* 长文本强制换行 */
+      p, div, span {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
     </style>
   </head>
