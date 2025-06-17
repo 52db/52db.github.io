@@ -1,31 +1,23 @@
 ---
 layout: default
-title: 首页
 ---
+<article class="post">
+  <h1>{{ page.title }}</h1>
+  
+  <div class="post-meta" style="color: #666; margin-bottom: 1em;">
+    <span>发布日期: {{ page.date | date: "%Y年%m月%d日" }}</span>
+    {% if page.categories %}
+    <span> | 分类: 
+      {% for category in page.categories %}
+        <a href="/categories.html#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </span>
+    {% endif %}
+  </div>
+  
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
 
-<div style="text-align: center; margin-bottom: 2em;">
-  <h2>欢迎来到风清扬的博客</h2>
-  <p>分享技术心得，记录学习历程</p>
-</div>
-
-<h3>最新文章</h3>
-<ul style="list-style: none; padding: 0;">
-  {% for post in site.posts limit:5 %}
-    <li style="margin-bottom: 1em; padding: 1em; border: 1px solid #ddd; border-radius: 4px;">
-      <h4 style="margin: 0 0 0.5em 0;">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </h4>
-      <p style="color: #666; font-size: 0.9em; margin: 0;">
-        {{ post.date | date: "%Y年%m月%d日" }}
-        {% if post.excerpt %}
-          | {{ post.excerpt | strip_html | truncate: 100 }}
-        {% endif %}
-      </p>
-    </li>
-  {% endfor %}
-</ul>
-
-<div style="text-align: center; margin-top: 2em;">
-  <a href="/archive.html" style="background: #3498db; color: white; padding: 0.5em 1em; border-radius: 4px; text-decoration: none;">查看所有文章</a>
-</div>
 
