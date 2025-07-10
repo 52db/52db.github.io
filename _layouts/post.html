@@ -1,23 +1,19 @@
 ---
 layout: default
 ---
-<article class="post">
-  <h1>{{ page.title }}</h1>
-  
-  <div class="post-meta" style="color: #666; margin-bottom: 1em;">
-    <span>发布日期: {{ page.date | date: "%Y年%m月%d日" }}</span>
-    {% if page.categories %}
-    <span> | 分类: 
-      {% for category in page.categories %}
-        <a href="/categories.html#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-      {% endfor %}
-    </span>
-    {% endif %}
-  </div>
-  
-  <div class="post-content">
-    {{ content }}
-  </div>
-</article>
-
-
+<div class="centered-content">
+    <article class="post-content">
+        <h1>{{ page.title }}</h1>
+        <p class="post-meta">发布日期: {{ page.date | date: "%Y年%m月%d日" }}</p>
+        {% if page.categories %}
+        <p class="post-meta">分类:
+            {% for category in page.categories %}
+            <span class="category-tag">{{ category }}</span>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+        </p>
+        {% endif %}
+        <hr>
+        {{ content }}
+    </article>
+    <p class="back-to-home"><a href="{{ '/' | relative_url }}">← 返回首页</a></p>
+</div>
