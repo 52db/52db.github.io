@@ -1,0 +1,51 @@
+@media (max-width: $breakpoint-md) {
+  .site-header {
+    .header-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .site-branding {
+      margin-bottom: 1rem;
+    }
+    
+    .nav-menu {
+      margin-bottom: 1rem;
+      
+      li {
+        margin: 0 0.75rem;
+      }
+    }
+  }
+  
+  .post-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  html {
+    font-size: 14px;
+  }
+  
+  .nav-menu {
+    li {
+      margin: 0 0.5rem;
+    }
+  }
+  
+  .post-navigation {
+    flex-direction: column;
+    
+    a {
+      max-width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .pagination {
+    a, .current-page {
+      padding: 0.3rem 0.7rem;
+    }
+  }
+}
