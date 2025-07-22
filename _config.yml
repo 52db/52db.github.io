@@ -1,40 +1,14 @@
-# 网站基本信息
 title: 风清扬博客
 description: 分享生活、技术与思考
 url: https://52db.github.io
-author: 风清扬
+baseurl: ""
 
-# 主题设置
-theme_color: "#4682B4"  # 湖蓝色
-default_theme: light    # 默认浅色模式
-
-# 分页设置
-paginate: 10
-paginate_path: "/page:num/"
-
-# 永久链接格式
+markdown: kramdown
 permalink: /:year/:month/:day/:title/
 
-# Markdown 渲染引擎
-markdown: kramdown
-
-# 插件
 plugins:
   - jekyll-paginate
   - jekyll-feed
-  - jekyll-seo-tag
 
-# 排除文件
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .gitignore
-  - README.md
-
-# 分类设置
-collections:
-  categories:
-    output: true
-    permalink: /categories/:name/
+paginate: 10
+paginate_path: "/page:num/"
