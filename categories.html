@@ -4,23 +4,13 @@ title: 分类
 permalink: /categories/
 ---
 
-<div class="categories-container">
-  <h1 class="page-title">文章分类</h1>
-  
-  <div class="categories-list">
-    {% assign categories = site.categories | sort %}
-    {% for category in categories %}
-      <div class="category-item">
-        <h2 id="{{ category[0] | slugify }}" class="category-name">{{ category[0] }}</h2>
-        <ul class="post-list">
-          {% for post in category[1] %}
-            <li>
-              <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+# 文章分类
+
+{% for category in site.categories %}
+  <h2>{{ category[0] }}</h2>
+  <ul>
+    {% for post in category[1] %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
     {% endfor %}
-  </div>
-</div>
+  </ul>
+{% endfor %}
