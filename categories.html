@@ -1,20 +1,104 @@
+<!-- categories.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>博客分类</title>
-  <link rel="stylesheet" href="/assets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类 - 风清扬博客</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode.css">
 </head>
-<body class="light-mode">
-  <header style="text-align: center; padding: 20px;">
-    <h1>博客分类</h1>
-  </header>
+<body class="dark-mode">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">风清扬博客</a>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">主页</a></li>
+                <li><a href="/categories" class="nav-link active">分类</a></li>
+                <li><a href="/about" class="nav-link">关于</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="toggleTheme" aria-label="切换主题模式"></button>
+            </div>
+        </div>
+    </nav>
 
-  <section style="max-width: 800px; margin: auto; padding: 20px;">
-    <ul>
-      <li><a href="#">电影推荐</a></li>
-      <li><a href="#">技术分享</a></li>
-    </ul>
-  </section>
+    <!-- 分类页面内容 -->
+    <main class="main-content">
+        <div class="content-container">
+            <header class="page-header">
+                <h1>文章分类</h1>
+                <p>按类别浏览所有博客文章</p>
+            </header>
+
+            <section class="categories-section">
+                <div class="category-grid">
+                    <!-- 分类卡片 -->
+                    <article class="category-card">
+                        <a href="/categories/web-development" class="category-link">
+                            <h3>前端开发</h3>
+                            <p>HTML, CSS, JavaScript, React等技术分享</p>
+                            <span class="post-count">12篇文章</span>
+                        </a>
+                    </article>
+
+                    <article class="category-card">
+                        <a href="/categories/movie-review" class="category-link">
+                            <h3>电影评论</h3>
+                            <p>各种类型电影的观后感与推荐</p>
+                            <span class="post-count">8篇文章</span>
+                        </a>
+                    </article>
+
+                    <article class="category-card">
+                        <a href="/categories/book-review" class="category-link">
+                            <h3>读书笔记</h3>
+                            <p>各类书籍的阅读体会与总结</p>
+                            <span class="post-count">15篇文章</span>
+                        </a>
+                    </article>
+
+                    <article class="category-card">
+                        <a href="/categories/tech-trends" class="category-link">
+                            <h3>技术趋势</h3>
+                            <p>最新技术发展动态与分析</p>
+                            <span class="post-count">6篇文章</span>
+                        </a>
+                    </article>
+
+                    <article class="category-card">
+                        <a href="/categories/life" class="category-link">
+                            <h3>生活感悟</h3>
+                            <p>日常生活的思考与记录</p>
+                            <span class="post-count">10篇文章</span>
+                        </a>
+                    </article>
+
+                    <article class="category-card">
+                        <a href="/categories/movies" class="category-link">
+                            <h3>影视推荐</h3>
+                            <p>优秀电影、剧集的推荐与解析</p>
+                            <span class="post-count">7篇文章</span>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 风清扬博客. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/theme-toggle.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
