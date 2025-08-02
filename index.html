@@ -3,102 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>风清扬博客</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/dark-mode.css">
-</head>
-<body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">风清扬博客</a>
-            <ul class="nav-menu">
-                <li><a href="/" class="nav-link active">主页</a></li>
-                <li><a href="/categories" class="nav-link">分类</a></li>
-                <li><a href="/about" class="nav-link">关于</a></li>
-            </ul>
-            <div class="theme-toggle">
-                <button id="toggleTheme" aria-label="切换主题模式"></button>
-            </div>
-        </div>
-    </nav>
+    <title>风清扬博客title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00b4d8;
+            --primary-light: #90e0ef;
+            --primary-dark: #0077b6;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-    <!-- 主要内容区域 -->
-    <main class="main-content">
-        <div class="content-container">
-            <!-- 顶部标题 -->
-            <header class="page-header">
-                <h1>风清扬博客</h1>
-                <p>分享技术与生活的点滴</p>
-            </header>
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --border-color: #444444;
+            --card-bg: #2d2d2d;
+            --header-bg: rgba(26, 26, 26, 0.95);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
 
-            <!-- 最新文章列表 -->
-            <section class="posts-section">
-                <h2>最新文章</h2>
-                <div class="posts-grid">
-                    <!-- 文章卡片 - 示例 -->
-                    <article class="post-card">
-                        <a href="/2024-09-01-movie-ruodian" class="post-link">
-                            <div class="post-image-placeholder"></div>
-                            <h3>电影《弱点》观后感</h3>
-                            <p class="post-meta">2024年9月1日 · 5分钟阅读</p>
-                            <p class="post-excerpt">这是一部关于成长、家庭和坚持的温情电影...</p>
-                        </a>
-                    </article>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                    <!-- 文章卡片 -->
-                    <article class="post-card">
-                        <a href="/2024-08-15-web-development" class="post-link">
-                            <div class="post-image-placeholder"></div>
-                            <h3>前端开发入门指南</h3>
-                            <p class="post-meta">2024年8月15日 · 8分钟阅读</p>
-                            <p class="post-excerpt">从HTML到React，带你走进前端世界的奇妙旅程...</p>
-                        </a>
-                    </article>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            line-height: 1.6;
+        }
 
-                    <!-- 文章卡片 -->
-                    <article class="post-card">
-                        <a href="/2024-07-20-book-review" class="post-link">
-                            <div class="post-image-placeholder"></div>
-                            <h3>《百年孤独》读书笔记</h3>
-                            <p class="post-meta">2024年7月20日 · 6分钟阅读</p>
-                            <p class="post-excerpt">马尔克斯笔下的魔幻现实主义世界...</p>
-                        </a>
-                    </article>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-                    <!-- 文章卡片 -->
-                    <article class="post-card">
-                        <a href="/2024-06-30-tech-trends" class="post-link">
-                            <div class="post-image-placeholder"></div>
-                            <h3>2024年技术趋势展望</h3>
-                            <p class="post-meta">2024年6月30日 · 7分钟阅读</p>
-                            <p class="post-excerpt">人工智能、区块链和云计算的未来发展趋势...</p>
-                        </a>
-                    </article>
-                </div>
+        /* Header Styles */
+        header {
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
 
-                <!-- 更多文章按钮 -->
-                <div class="load-more">
-                    <button id="loadMoreBtn" class="btn-load-more">加载更多</button>
-                </div>
-            </section>
-        </div>
-    </main>
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
 
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 风清扬博客. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" aria-label="GitHub">GitHub</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
-                <a href="#" aria-label="Weibo">微博</a>
-            </div>
-        </div>
-    </footer>
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
 
-    <!-- JavaScript -->
-    <script src="/assets/js/theme-toggle.js"></script>
-    <script src="/assets/js/main.js"></script>
-</body>
-</html>
+html>
