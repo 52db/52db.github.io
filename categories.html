@@ -1,16 +1,20 @@
----
-layout: default
-title: 分类
-permalink: /categories/
----
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>博客分类</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body class="light-mode">
+  <header style="text-align: center; padding: 20px;">
+    <h1>博客分类</h1>
+  </header>
 
-# 文章分类
-
-{% for category in site.categories %}
-  <h2>{{ category[0] }}</h2>
-  <ul>
-    {% for post in category[1] %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+  <section style="max-width: 800px; margin: auto; padding: 20px;">
+    <ul>
+      <li><a href="#">电影推荐</a></li>
+      <li><a href="#">技术分享</a></li>
+    </ul>
+  </section>
+</body>
+</html>
