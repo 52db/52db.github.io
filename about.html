@@ -1,17 +1,77 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>关于风清扬博客</title>
-  <link rel="stylesheet" href="/assets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 - 风清扬博客</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/dark-mode.css">
 </head>
-<body class="light-mode">
-  <header style="text-align: center; padding: 20px;">
-    <h1>关于我</h1>
-  </header>
+<body class="dark-mode">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">风清扬博客</a>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">主页</a></li>
+                <li><a href="/categories" class="nav-link">分类</a></li>
+                <li><a href="/about" class="nav-link active">关于</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="toggleTheme" aria-label="切换主题模式"></button>
+            </div>
+        </div>
+    </nav>
 
-  <section style="max-width: 800px; margin: auto; padding: 20px;">
-    <p>我是风清扬，一个热爱技术与生活的博主。在这里分享电影推荐、编程经验和生活感悟。</p>
-  </section>
+    <!-- 关于页面内容 -->
+    <main class="main-content">
+        <div class="content-container">
+            <header class="page-header">
+                <h1>关于我</h1>
+                <p>一个热爱技术与生活的博客作者</p>
+            </header>
+
+            <section class="about-section">
+                <div class="profile-card">
+                    <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
+                    <div class="profile-info">
+                        <h2>风清扬</h2>
+                        <p>一名专注于前端开发的技术博主，热衷于分享编程经验与生活感悟。</p>
+                        <p>关注技术趋势，喜欢探索新技术，并乐于将所学知识记录下来与大家分享。</p>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <h3>博客宗旨</h3>
+                    <p>本博客旨在分享我在前端开发、电影评论、读书笔记等方面的经验和心得。希望通过文字记录自己的成长轨迹，同时也希望能为同样热爱技术的朋友们提供一些有用的参考。</p>
+                    
+                    <h3>联系方式</h3>
+                    <ul class="contact-list">
+                        <li>Email: windqingyang@example.com</li>
+                        <li>GitHub: github.com/52db</li>
+                        <li>Twitter: @windqingyang</li>
+                    </ul>
+
+                    <h3>关于这个博客</h3>
+                    <p>这是基于 GitHub Pages 构建的静态博客，使用 Jekyll 框架生成。所有内容都托管在 GitHub 上，支持响应式设计，适配各种设备。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 风清扬博客. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/theme-toggle.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
