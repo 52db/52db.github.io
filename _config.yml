@@ -1,14 +1,32 @@
 title: 风清扬博客
-description: 分享生活、技术与思考
-url: https://52db.github.io
+description: 记录生活与技术
+url: "https://52db.github.io"
 baseurl: ""
 
+# 主题设置
+theme_color: "#20B2AA"  # 湖蓝色
+
+# 构建设置
 markdown: kramdown
+highlighter: rouge
 permalink: /:year/:month/:day/:title/
 
+# 插件
 plugins:
-  - jekyll-paginate
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-paginate: 10
-paginate_path: "/page:num/"
+# 导航菜单
+navigation:
+  - title: 首页
+    url: /
+  - title: 分类
+    url: /categories/
+  - title: 关于
+    url: /about/
+
+# 社交链接
+social:
+  github: https://github.com/52db
+  email: your-email@example.com
