@@ -3,20 +3,6 @@ description: 记录生活与技术
 url: "https://52db.github.io"
 baseurl: ""
 
-# 主题设置
-theme_color: "#20B2AA"  # 湖蓝色
-
-# 构建设置
-markdown: kramdown
-highlighter: rouge
-permalink: /:year/:month/:day/:title/
-
-# 插件
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
 # 导航菜单
 navigation:
   - title: 首页
@@ -25,8 +11,3 @@ navigation:
     url: /categories/
   - title: 关于
     url: /about/
-
-# 社交链接
-social:
-  github: https://github.com/52db
-  email: your-email@example.com
