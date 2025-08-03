@@ -1,78 +1,39 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>风清扬博客title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #00b4d8;
-            --primary-light: #90e0ef;
-            --primary-dark: #0077b6;
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --border-color: #e0e0e0;
-            --card-bg: #ffffff;
-            --header-bg: rgba(255, 255, 255, 0.95);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
+---
+layout: default
+title: 首页
+---
 
-        .dark-mode {
-            --bg-color: #1a1a1a;
-            --text-color: #f0f0f0;
-            --border-color: #444444;
-            --card-bg: #2d2d2d;
-            --header-bg: rgba(26, 26, 26, 0.95);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: var(--transition);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--header-bg);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-html>
+<div class="posts-list">
+  <h2 class="section-title">最新文章</h2>
+  
+  {% for post in site.posts %}
+    <article class="post-item">
+      <div class="post-date">
+        <span class="day">{{ post.date | date: "%d" }}</span>
+        <span class="month">{{ post.date | date: "%b" }}</span>
+      </div>
+      
+      <div class="post-content">
+        <h3 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        
+        <div class="post-meta">
+          {% if post.categories %}
+            <span class="categories">
+              {% for category in post.categories %}
+                <a href="{{ site.baseurl }}/categories/{{ category | slugify }}.html">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </span>
+          {% endif %}
+        </div>
+        
+        <div class="post-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 30 }}
+        </div>
+        
+        <a href="{{ post.url | relative_url }}" class="read-more">阅读全文</a>
+      </div>
+    </article>
+  {% endfor %}
+</div>
