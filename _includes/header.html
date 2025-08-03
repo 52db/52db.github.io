@@ -1,23 +1,17 @@
-<header class="site-header">
-  <div class="header-wrapper">
-    <div class="site-branding">
-      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-    </div>
-    
-    <nav class="site-nav">
-      <ul class="nav-menu">
-        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>首页</a></li>
-        <li><a href="{{ '/categories' | relative_url }}" {% if page.url == '/categories/' %}class="active"{% endif %}>分类</a></li>
-        <li><a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>关于</a></li>
-      </ul>
-    </nav>
-    
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="theme-toggle">
-        <input type="checkbox" id="theme-toggle" />
-        <span class="slider round"></span>
-      </label>
-      <span class="theme-mode-icon">🌙</span>
-    </div>
+<nav class="main-navigation">
+  <ul class="nav-menu">
+    {% for item in site.navigation %}
+      <li class="nav-item">
+        <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  
+  <div class="theme-toggle">
+    <button id="theme-toggle-btn" aria-label="切换主题">
+      <i class="fas fa-moon"></i>
+    </button>
   </div>
-</header>
+</nav>
