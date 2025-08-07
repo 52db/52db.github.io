@@ -1,13 +1,15 @@
-title: 风清扬博客
-description: 记录生活与技术
-url: "https://52db.github.io"
-baseurl: ""
-
-# 导航菜单
-navigation:
-  - title: 首页
-    url: /
-  - title: 分类
-    url: /categories/
-  - title: 关于
-    url: /about/
+title: "风清扬博客"
+description: "记录生活与思考的博客"
+author: "风清扬"
+# 让theme为 minimal 与自定义 CSS 一起使用
+theme: minima  
+# 让GitHub Pages 识别下面目录写法
+permalink: /:year/:month/:day/:title.html
+paginate: 10            # 每页 10 篇文章
+paginate_path: "/page:num/"  # 分页路径
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title.html
+# 让前端引用字体（可选）
+google_fonts: "Roboto:300,400,700"
