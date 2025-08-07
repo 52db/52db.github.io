@@ -1,23 +1,16 @@
----
-layout: default
----
-
+{% extends 'default' %}
+{% block content %}
 <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
-      {% if page.categories %}
-        <span class="categories">
-          {% for category in page.categories %}
-            <a href="{{ site.baseurl }}/categories/{{ category | slugify }}.html">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-          {% endfor %}
-        </span>
-      {% endif %}
-    </div>
-  </header>
-  
+  <h1 class="post-title">{{ page.title }}</h1>
+  <p class="meta">发表于 {{ page.date | date: "%Y-%m-%d" }}</p>
   <div class="post-content">
     {{ content }}
   </div>
+  <footer class="post-meta">
+    归属于
+    {% for cat in page.categories %}
+      <a href="{{ '/categories/' | append: cat | relative_url }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </footer>
 </article>
+{% endblock %}
