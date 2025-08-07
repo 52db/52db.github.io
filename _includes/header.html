@@ -1,17 +1,7 @@
-<nav class="main-navigation">
-  <ul class="nav-menu">
-    {% for item in site.navigation %}
-      <li class="nav-item">
-        <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">
-          {{ item.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-  
-  <div class="theme-toggle">
-    <button id="theme-toggle-btn" aria-label="切换主题">
-      <i class="fas fa-moon"></i>
-    </button>
-  </div>
-</nav>
+<header class="header">
+  <nav>
+    <a href="{{ '/' | relative_url }}">首页</a>
+    <a href="{{ '/about/' | relative_url }}">关于</a>
+    <a href="{{ '/categories/' | relative_url }}">分类</a>
+  </nav>
+</header>
