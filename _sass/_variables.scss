@@ -1,0 +1,26 @@
+// 湖蓝色主题
+:root {
+  --primary-color: #3a9bdc; // 湖蓝色
+  --secondary-color: #5fb0e5;
+  --text-color: #333;
+  --background-color: #f8f9fa;
+  --card-bg: #fff;
+  --border-color: #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #f0f0f0;
+    --background-color: #121212;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+  }
+}
+
+// 手动切换的暗黑模式
+.dark-mode {
+  --text-color: #f0f0f0;
+  --background-color: #121212;
+  --card-bg: #1e1e1e;
+  --border-color: #333;
+}
