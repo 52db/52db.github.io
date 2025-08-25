@@ -1,0 +1,9 @@
+title: 风清扬博客
+description: 个人技术博客
+baseurl: "" # 如果是项目站点填写"/repository-name"
+url: "https://52db.github.io"
+theme: minima  # 基础主题，我们将覆盖样式
+
+# 其他配置
+permalink: /:year/:month/:title/
+timezone: Asia/Shanghai
